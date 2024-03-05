@@ -1,0 +1,13 @@
+name: 'Notify AWS SNS Topic'
+description: Sends an AWS SNS notification
+inputs:
+  message:
+    description: 'Message to send to SNS Topic'
+    required: true
+    default: 'Hello World'
+outputs:
+  sns_id:
+    description: 'SNS Message ID'
+runs:
+  using: 'node20'
+  main: 'index.js'

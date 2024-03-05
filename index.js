@@ -7,8 +7,8 @@ import { SNSClient, PublishCommand } from "@aws-sdk/client-sns";
 try {
     const TOPIC_ARN = getInput("TOPIC_ARN") || process.env.TOPIC_ARN;
     let snsClient = new SNSClient({ credentials: fromEnv() });
-    if (!TOPIC_ARN) {
-        throw new Exception('No TOPIC_ARN defined as input or environment');
+    if (TOPIC_ARN == undefined) {
+        throw new Error('No TOPIC_ARN defined as input or environment');
     }
     let message = `
 Repository: ${process.env.GITHUB_REPOSITORY}

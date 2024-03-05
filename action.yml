@@ -5,6 +5,9 @@ inputs:
     description: 'Message to send to SNS Topic'
     required: true
     default: 'Hello World'
+  topic_arn:
+    description: 'Topic ARN to deliver to'
+    required: true
 outputs:
   sns_id:
     description: 'SNS Message ID'

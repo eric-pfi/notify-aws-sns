@@ -11,10 +11,10 @@ try {
         throw new Error('No TOPIC_ARN defined as input or environment');
     }
     let message = `{
-"Repository": ${process.env.GITHUB_REPOSITORY},
-"Branch": ${process.env.GITHUB_REF}
-"URL": https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}
-"Message": ${getInput("MESSAGE") || 'Testing'}}`;
+"Repository": "${process.env.GITHUB_REPOSITORY}",
+"Branch": "${process.env.GITHUB_REF}"
+"URL": "https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}"
+"Message": "${getInput("MESSAGE") || 'Testing'}"}`;
     const response = await snsClient.send(
         new PublishCommand( {
             TopicArn: TOPIC_ARN,

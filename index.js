@@ -12,8 +12,8 @@ try {
     }
     let message = `{
 "Repository": "${process.env.GITHUB_REPOSITORY}",
-"Branch": "${process.env.GITHUB_REF}"
-"URL": "https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}"
+"Branch": "${process.env.GITHUB_REF}",
+"URL": "https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}",
 "Message": "${getInput("MESSAGE") || 'Testing'}"}`;
     const response = await snsClient.send(
         new PublishCommand( {
